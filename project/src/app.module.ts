@@ -1,9 +1,12 @@
 import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
+import { CatsModule } from './cats/cats.module';
+import { UsersModule } from './users/users.module';
+import { CatsService } from './cats/cats.service';
 
 @Module({
-  imports: [],
+  imports: [CatsModule, UsersModule],
   controllers: [AppController], //소비자
   providers: [AppService], //공급자
 })
